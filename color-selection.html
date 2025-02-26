@@ -3,26 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color & Pattern</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Customize & Download</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Choose Your Frame</h2>
-        <div class="color-options">
-            <div class="color-circle" style="background: red;"></div>
-            <div class="color-circle" style="background: blue;"></div>
-            <div class="color-circle" style="background: yellow;"></div>
+
+    <h1>Photobooth - Customize</h1>
+
+    <div id="frame-options">
+        <h3>Choose Frame Color</h3>
+        <div id="color-options">
+            <div class="color-option" data-color="#ffffff" style="background: white;"></div>
+            <div class="color-option" data-color="#ffcccc" style="background: pink;"></div>
+            <div class="color-option" data-color="#ffcc99" style="background: orange;"></div>
+            <div class="color-option" data-color="#ccffcc" style="background: lightgreen;"></div>
         </div>
-        <div class="pattern-options">
-            <img src="imgs/blacksilk.png" class="pattern-frame">
-            <img src="imgs/cow.png" class="pattern-frame">
+
+        <h3>Choose Pattern Frame</h3>
+        <div id="pattern-options">
+            <div class="pattern-option" data-pattern="pattern1.jpg" style="background-image: url('pattern1.jpg');"></div>
+            <div class="pattern-option" data-pattern="pattern2.jpg" style="background-image: url('pattern2.jpg');"></div>
         </div>
-        <label><input type="checkbox"> Add Date & Time</label>
-        <button onclick="downloadImage()">Download Image</button>
-        <button onclick="downloadGif()">Download GIF</button>
-        <button onclick="window.location.href='capture.html'">Retake</button>
     </div>
-    <footer>PhotoBooth © 2025</footer>
+
+    <div id="extra-options">
+        <label>
+            <input type="checkbox" id="add-date-time">
+            Add Date & Time to Photo/GIF
+        </label>
+    </div>
+
+    <div id="download-buttons">
+        <button class="button" id="download-image">Download Image</button>
+        <button class="button" id="download-gif">Download GIF</button>
+    </div>
+
+    <footer class="footer">
+        <p>Photobooth © 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
