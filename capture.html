@@ -3,17 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capture</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <title>Capture Photo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <video id="camera" autoplay></video>
-        <canvas id="preview"></canvas>
-        <button onclick="capturePhoto()">Capture</button>
-        <button onclick="window.location.href='color-selection.html'">Next</button>
+
+    <h1>Photobooth - Capture</h1>
+
+    <div id="camera-container">
+        <video id="video" autoplay></video>
+        <div id="countdown"></div>
+        <button class="button" id="switch-camera">Switch Camera</button>
+        <button class="button" id="capture">Capture</button>
     </div>
-    <footer>PhotoBooth © 2025</footer>
+
+    <div id="preview-container">
+        <h2>Captured Images</h2>
+        <div id="captured-images"></div>
+    </div>
+
+    <button class="button" id="next-page">Next</button>
+
+    <footer class="footer">
+        <p>Photobooth © 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
