@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Frame</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Select Your Frame</h2>
+        <div class="frames">
+            <div class="frame-option"><img src="frame1.png"><button>Select</button></div>
+            <div class="frame-option"><img src="frame2.png"><button>Select</button></div>
+            <div class="frame-option"><img src="frame3.png"><button>Select</button></div>
+            <div class="frame-option"><img src="vintage.png"><button>Select</button></div>
+        </div>
+        <label for="timer">Timer Interval:</label>
+        <select id="timer">
+            <option value="5">5s</option>
+            <option value="10">10s</option>
+            <option value="15">15s</option>
+        </select>
+        <button onclick="window.location.href='capture.html'">Next</button>
+    </div>
+    <footer>PhotoBooth © 2025</footer>
+</body>
+</html>

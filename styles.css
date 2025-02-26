@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.photobooth-title {
+    font-family: 'Cursive', sans-serif;
+    font-size: 3em;
+    color: #fff;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: pink;
+    color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ff69b4;
+}
+
+.frames {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.frame-option {
+    position: relative;
+    display: inline-block;
+}
+
+.frame-option img {
+    width: 150px;
+    border-radius: 10px;
+}
+
+.frame-option button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 105, 180, 0.8);
+}
+
+.color-options, .pattern-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.color-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.pattern-frame {
+    width: 100px;
+    cursor: pointer;
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 0.8em;
+}

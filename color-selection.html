@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color & Pattern</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Choose Your Frame</h2>
+        <div class="color-options">
+            <div class="color-circle" style="background: red;"></div>
+            <div class="color-circle" style="background: blue;"></div>
+            <div class="color-circle" style="background: yellow;"></div>
+        </div>
+        <div class="pattern-options">
+            <img src="imgs/blacksilk.png" class="pattern-frame">
+            <img src="imgs/cow.png" class="pattern-frame">
+        </div>
+        <label><input type="checkbox"> Add Date & Time</label>
+        <button onclick="downloadImage()">Download Image</button>
+        <button onclick="downloadGif()">Download GIF</button>
+        <button onclick="window.location.href='capture.html'">Retake</button>
+    </div>
+    <footer>PhotoBooth © 2025</footer>
+</body>
+</html>
