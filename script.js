@@ -7,11 +7,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const downloadGifButton = document.getElementById('download-gif');
     const dateTimeCheckbox = document.getElementById('add-datetime');
     const countdownDisplay = document.getElementById('countdown');
+    const previewContainer = document.getElementById('preview-container');
+    const video = document.getElementById('camera');
+    const canvas = document.createElement('canvas');
     const shutterSound = new Audio('shutter.mp3'); // Add your shutter sound file
     const countdownSound = new Audio('countdown.mp3'); // Add your countdown sound file
     let selectedFrame = '';
     let selectedColor = '';
     let selectedPattern = '';
+
+    // Access the user's camera
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+            video.srcObject = stream;
+        })
+        .catch(error => {
+            console.error('Error accessing camera:', error);
+        });
     
     // Frame selection
     frameButtons.forEach(button => {
@@ -53,26 +65,38 @@ document.addEventListener('DOMContentLoaded', () => {
                     clearInterval(countdownInterval);
                     countdownDisplay.style.display = 'none';
                     shutterSound.play(); // Play shutter sound
-                    console.log('Capturing image with frame:', selectedFrame, 'Color:', selectedColor, 'Pattern:', selectedPattern);
-                    // Capture logic here
+                    captureImage();
                 }
             }, 1000);
         });
     }
 
+    function captureImage() {
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        
+        const img = document.createElement('img');
+        img.src = canvas.toDataURL('image/png');
+        img.classList.add('captured-image');
+        previewContainer.prepend(img);
+    }
+
     // Download image
     if (downloadImageButton) {
         downloadImageButton.addEventListener('click', () => {
-            console.log('Downloading image');
-            // Image download logic here
+            const link = document.createElement('a');
+            link.href = canvas.toDataURL('image/png');
+            link.download = 'captured-image.png';
+            link.click();
         });
     }
 
-    // Download GIF
+    // Download GIF (Placeholder logic for now)
     if (downloadGifButton) {
         downloadGifButton.addEventListener('click', () => {
-            console.log('Downloading GIF');
-            // GIF download logic here
+            alert('GIF download functionality to be implemented.');
         });
     }
 
